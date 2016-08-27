@@ -1,6 +1,10 @@
 from django.core.management.base import BaseCommand, CommandError
 from uploadcsv.models import Namelist, NamelistForm
 import datetime
+import os
+
+from core import match_file
+
 
 class Command(BaseCommand):
     help = 'Procesa CSV y encuentra coincidencias en Panama Papers'
@@ -10,16 +14,23 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for namelist in Namelist.objects.all():
-            if namelist.status != "Procesado1":
+            if namelist.status != "Processed":
+                # "output/" + os.path.basename(namelist.namefile))
+                namelist.donefile = namelist.namefile.name.join("_done")
+                namelist.status = "Processing"
+                namelist.save()
+
                 try:
-                    print namelist.namefile
+                    match_file(
+                        namelist.namefile,
+                        namelist.donefile
+                    )
 
                 except:
-                    raise CommandError('Error "%s" procesando' % namelist.namefile)
+                    raise CommandError('Error processing "%s"' % namelist.namefile)
 
-                namelist.donefile = namelist.namefile.name.join("_done");
                 namelist.done_date = datetime.datetime.now()
-                namelist.status = "Procesado";
+                namelist.status = "Fake_processed"
                 namelist.save()
 
                 self.stdout.write(self.style.SUCCESS('Successfully processed "%s"' % namelist.donefile))
