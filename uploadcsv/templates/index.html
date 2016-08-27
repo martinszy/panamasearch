@@ -1,26 +1,178 @@
+<!DOCTYPE HTML>
 <html>
-<head>
-<title>Panama Search</title>
+ <head>
+ <meta charset="UTF-8">
+  <script src="js/jquery-2.2.3.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]>
+		<script src="http://static.mlstatic.com/org-img/ch/tools/html5shiv/html5shiv.js"></script>
+	<![endif]-->
+  
+
+   <script>
+
+    </script>
+
+
 </head>
 <body>
-  {% if resultado %}
-  {{ resultado }}
-  {% endif %}
-<form action="/" method="post"  enctype="multipart/form-data">
-  {% csrf_token %}
-  <table>
-    {{ form }}
 
-  </table>
-<input type="submit">
-</form>
-{% if namelists %}
-  {% for namelist in namelists %}
-  {{namelist.namefile}} -
-  {{namelist.status}} -
-  {{namelist.donefile}} <br>
-  {% endfor %}
-{% endif %}
+  <div id="cont" class="container-fluid">
+  <div class="row">
+      
+      <nav class="col-md-12">
+        <ul id="nav1">
+          <li><h1>Panama Search</h1></li>          
+        </ul>
+        <a href="https://hackdash.org/projects/57c19017d9284f016c047248" target="_blank">
+          <img src="img/logohack.png" alt="" id="logo_hack">
+        </a>
+      </nav>
+     
+      <header class="col-sm-10 col-sm-offset-1">
+        <div class="row">
+             <div class="line"></div> 
+
+        </div>             
+      </header>
+
+      <section class="col-sm-10 col-sm-offset-1">
+      <div class="row">
+
+
+
+
+              <!-- ............................................ -->  
+
+
+
+              
+              <div id="titForm" class="contPage col-sm-12"> 
+              <div class="row"> 
+                  <div id="titInfo">
+                    <h1>Panama Search</h1> 
+                    <br>
+                    <h2>Gotta find'em all</h2>
+                  </div>                  
+                  <div id="titInfo2">
+                    <div class="col-md-3"><img id="imgHack" src="img/imgHack.jpg" alt="" width="200px" height="200px"></div>
+                    <div class="col-md-8">
+                      <h1><strong>¿Qué es?</strong></h1>
+                      Este motor de búsqueda permite realizar consultas de nombres dentro de la base de datos de Panama Papers en grandes bloques, sin necesidad de hacerlos uno por uno, y ahorrándote horas de trabajo.
+                    </div>
+                  </div>
+                  <div class="col-md-12 titInfo3">
+                       <h1><strong>Cómo usarlo</strong></h1>
+                       Debes ingresar un listado de datos, como por ejemplo el nombre completo de la persona, o el número de identificación personal (DNI, ID). Este listado puede ser subido de dos maneras                    
+                   
+                  </div>
+                  <div class="col-md-12">
+                  <div class="row">
+                         <div class="col-md-6">
+                                    <img class="imgCsv" src="img/imgcsv1.png" alt="" width="250px" height="250px">                   
+                        </div>
+                        <div class="col-md-6">
+                                    <img class="imgCsv" src="img/imgcsv2.png" alt="" width="250px" height="250px">                   
+                        </div>
+                  </div>                   
+                  </div>    
+                  <div id="infoForm" class="col-sm-12"> 
+                      
+                      Cada renglón equivale a un registro, pudiendo ingresar más de un dato por registro separado por comas. Por jemplo:
+                   
+                  </div>
+                  <div id="infoForm2" class="col-md-10 col-md-offset-1"> 
+                      <code>
+                        Nombre Completo 1, 30456990, <br>
+                        Nombre Completo 2,           <br>
+                        Nombre Completo 3, 2430097   <br>
+                      </code>
+                  </div>
+                  <div class="col-md-12 titInfo3">
+                       <h1><strong>Resultados</strong></h1>
+                        Las consultas a la base de datos entera puede tomar un tiempo. Revisa tu archivo debajo, visualizá los resultados cuando esté listo y descargalos.                   
+                  </div>
+                  <div class="col-md-12 titInfo3">
+                       <h1><strong>Importante</strong></h1>
+                          
+                          Esta herramienta tiene como objetivo ayudarte en la investigación, ahorrando tiempo en filtrados y grandes búsquedas.                  
+                  </div>
+                  <div class="col-md-12">
+                  <div class="row">                        
+                       <img id="imgManos" src="img/manos.png" alt="" width="500px" height="">          
+                       
+                  </div>                   
+                  </div>
+                  <div class="col-md-12 titInfo3">
+                      Debido al gran tamaño de la base de datos de Panama Papers, este motor de búsqueda se basa solo en reconocimiento de texto y similitudes. Algunos resultados podrían no corresponder a la persona buscada.
+                                <br> <br>
+                      La confirmación de los datos arrojados y contrastación con otras fuentes dependen de vos. Recordá: este motor te ayudará en tu investigación, pero no la definirá.
+                  </div> 
+              </div>
+              </div> 
+
+
+
+
+              <!-- ............................................ -->  
+
+
+              
+              <div id="contForm" class="contPage col-sm-12">     
+              <div class="row">         
+                
+                <form method="post" id="formulario" enctype="multipart/form-data">                    
+                    <div class="col-sm-12">
+                        <h1>Subir Archivo CSV o copy/page en textarea en formato CSV:</h1>
+                          <br>
+                        <input type="file" name="file" id="fileCont">
+                          <br>                  
+                        <textarea id="texto_csv" name="message" required></textarea> 
+                          <br>
+                        <button type="submit">Send</button>  
+                    </div>
+                </form> 
+
+              </div>
+              </div> 
+
+
+
+              <!-- ............................................ -->  
+
+
+
+
+              <div id="contResp" class="contPage col-sm-12">
+                  <div id="titulo"><h1>Resultados:</h1></div>
+                  <div id="resultado">
+                  <div id="loading_cont"></div>
+                  <ul>
+                    
+                  </ul>
+                  </div>                
+              </div>
+
+
+
+              <!-- ............................................ -->  
+
+      </div>
+      </section>
+
+  </div>
+  </div>
+
+  <script type="text/javascript"  src="js/main.js"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
