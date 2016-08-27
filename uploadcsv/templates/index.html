@@ -75,7 +75,6 @@
                                     <img class="imgCsv" src="{% static 'img/imgcsv1.png'%}" alt="" width="250px" height="250px">
                         </div>
                         <div class="col-md-6">
-                                    <img class="imgCsv" src="{% static 'img/imgcsv2.png' %}" alt="" width="250px" height="250px">
                         </div>
                   </div>
                   </div>
@@ -126,13 +125,13 @@
 
                 <form method="post" id="formulario" enctype="multipart/form-data" action="/">
                     <div class="col-sm-12">
-                        <h1>Subir Archivo CSV o copy/page en textarea en formato CSV:</h1>
+                        <h1>Subir Archivo CSV:</h1>
                         {% csrf_token %}
                         <table>
                           {{ form }}
 
                         </table>
-                      <input type="submit">
+                      <input type="submit" value="Cargar CSV">
 
                     </div>
                 </form>
@@ -148,7 +147,7 @@
 
 
               <div id="contResp" class="contPage col-sm-12">
-                  <div id="titulo"><h1>Trabajos:</h1></div>
+                  <div id="titulo"><h1>Trabajos:</h1><a href="/#resultstable" onclick="window.location.reload()">Recargar</a></div>
                   <div id="resultado">
                     {% if resultado %}
                     {{ resultado }}
