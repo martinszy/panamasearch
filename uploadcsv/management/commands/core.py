@@ -5,7 +5,7 @@ import os
 
 SHINGLE_SIZE = 2
 THRESHOLD = 0.6
-PANAMA_FILE = "Officers.csv"
+PANAMA_FILE = "data/Officers.csv"
 
 
 def get_shingles(word):
