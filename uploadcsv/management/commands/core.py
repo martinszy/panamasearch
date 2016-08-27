@@ -72,11 +72,15 @@ def match_file(input_file, output_file):
         write matches in output_file
     """
     docs = list(read_panama_file())
-    with open(output_file, 'w', newline='') as fp:
+    with open(output_file, 'w') as fp:
         a = csv.writer(fp, delimiter=',')
 
         with open(input_file, 'r') as csvfile:
             for index, row in enumerate(parse_csv(csvfile)):
+                if index == 0:
+                    titles = ["score", "link", "name"]
+                    titles.extend(row)
+                    a.writerow(titles)
                 if index % 10 == 0:
                     print (index)
                 name = ("%s %s" % (row[0], row[1])).strip()
@@ -84,7 +88,7 @@ def match_file(input_file, output_file):
                     for match in find_doc(name, docs):
                         data = [match['score'],
                                 panama_link(match['original']['node_id']),
-                                match['original']['name'].upper()
+                                '"%s"' % match['original']['name'].upper()
                                 ]
                         data.extend(row)
                         a.writerow(data)
