@@ -15,19 +15,17 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for namelist in Namelist.objects.all():
             if namelist.status == "Pending":
-                # "output/" + os.path.basename(namelist.namefile))
                 namelist.donefile = namelist.namefile.name + "_done"
                 namelist.status = "Processing"
                 namelist.save()
 
-                #try:
-                match_file(
+                try:
+                    match_file(
                         namelist.namefile.name,
                         namelist.donefile
                     )
-
-                #except:
-                #    raise CommandError('Error processing "%s"' % namelist.namefile)
+                except:
+                    raise CommandError('Error processing "%s"' % namelist.namefile)
 
                 namelist.done_date = datetime.datetime.now()
                 namelist.status = "Done"
