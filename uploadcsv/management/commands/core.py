@@ -88,7 +88,7 @@ def match_file(input_file, output_file):
                     for match in find_doc(name, docs):
                         data = [match['score'],
                                 panama_link(match['original']['node_id']),
-                                '"%s"' % match['original']['name'].upper()
+                                match['original']['name'].upper()
                                 ]
                         data.extend(row)
                         a.writerow(data)
