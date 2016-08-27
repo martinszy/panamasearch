@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Panama Search</title>
+</head>
+<body>
+  {% if resultado %}
+  {{ resultado }}
+  {% endif %}
+<form action="/" method="post"  enctype="multipart/form-data">
+  {% csrf_token %}
+  <table>
+    {{ form }}
+
+  </table>
+<input type="submit">
+</form>
+{% if namelists %}
+  {% for namelist in namelists %}
+  {{namelist.namefile}} -
+  {{namelist.status}} -
+  {{namelist.donefile}} <br>
+  {% endfor %}
+{% endif %}
+
+</body>
+</html>

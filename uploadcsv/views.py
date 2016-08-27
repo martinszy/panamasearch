@@ -1,25 +1,23 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
-from django.core import files
 from django.http import HttpResponseRedirect
 from .forms import UploadFileForm
+from uploadcsv.models import Namelist, NamelistForm
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'upload.html', {})
+    model = Namelist;
+    namelists = Namelist.objects.all();
 
-@csrf_exempt
-def postcsv(request):
-    #request.FILES.csvfile
     if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
-        handle_uploaded_file(request.FILES['namefile'])
-        return render(request, 'upload.html', {'resultado': "Subida correcta"})
+        form = NamelistForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = Namelist(namefile=request.FILES['namefile'])
+            instance.status = "Subido, esperando procesamiento"
+            instance.save()
+            return render(request, 'index.html', {'namelists': namelists, 'form': form, 'resultado': "Subido"})
+        else:
+            return render(request, 'index.html', {'namelists': namelists, 'form': form,'resultado': "Error"})
     else:
-        redirect("/")
-
-def handle_uploaded_file(f):
-    with open('upload.csv', 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
+        form = UploadFileForm()
+    return render(request, 'index.html', {'namelists': namelists, 'form': form})

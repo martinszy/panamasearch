@@ -5,13 +5,10 @@ Panama Search
 <body>
   {% if resultado %}
   {{ resultado }}
-  {{ request.errors }}
-  {{ request.POST }}
-  {{ request.FILES }}
   {% endif %}
-<form action="/postcsv/" method="post"  enctype="multipart/form-data">
-<input type="file" name="namefile">
-<textarea name="textlist"></textarea>
+<form action="/" method="post"  enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form }}
 <input type="submit">
 </form>
 </body>
