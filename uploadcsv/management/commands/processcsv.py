@@ -14,16 +14,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for namelist in Namelist.objects.all():
-            if namelist.status == "Pending" or True:
+            if namelist.status == "Pending":
                 namelist.donefile = namelist.namefile.name[namelist.namefile.name.rfind("/"):namelist.namefile.name.rfind(".")] + "_done.csv"
                 namelist.status = "Processing"
                 namelist.save()
 
                 try:
-                match_file(
-                    namelist.namefile.name,
-                    namelist.namefile.name[:namelist.namefile.name.rfind("/")]+"/"+namelist.donefile
-                )
+                    match_file(
+                        namelist.namefile.name,
+                        namelist.namefile.name[:namelist.namefile.name.rfind("/")]+"/"+namelist.donefile
+                    )
                 except:
                     raise CommandError('Error processing "%s"' % namelist.namefile)
 

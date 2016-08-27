@@ -13,14 +13,13 @@ def find_doc(name, docs):
     """ find the string name in the list of string docs
         you need to precalculate the shingles for docs
     """
-    t = datetime.datetime.now()
     shingles1 = get_shingles(name)
     for doc in docs:
         shingles2 = doc['shingles']
-        score = jaccard(shingles1, shingles2)
-        if score > THRESHOLD:
-            yield {'score': score, 'original': doc}
-    print (datetime.datetime.now() - t)
+        if shingles2:
+            score = jaccard(shingles1, shingles2)
+            if score > THRESHOLD:
+                yield {'score': score, 'original': doc}
 
 
 def parse_csv(csv_file):
