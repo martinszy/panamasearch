@@ -19,7 +19,6 @@ class Command(BaseCommand):
                 namelist.status = "Processing"
                 namelist.save()
 
-<<<<<<< HEAD
                 try:
                 match_file(
                     namelist.namefile.name,
@@ -27,15 +26,6 @@ class Command(BaseCommand):
                 )
                 except:
                     raise CommandError('Error processing "%s"' % namelist.namefile)
-=======
-                #try:
-                match_file(
-                        namelist.namefile.name,
-                        namelist.donefile
-                    )
-                #except:
-                #    raise CommandError('Error processing "%s"' % namelist.namefile)
->>>>>>> 20a988daa72abe363d7d34e799eecffae3492b78
 
                 namelist.done_date = datetime.datetime.now()
                 namelist.status = "Done"
