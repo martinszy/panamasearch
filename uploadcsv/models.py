@@ -7,7 +7,7 @@ from django import forms
 class Namelist(models.Model):
     upload_date = models.DateField(auto_now=True)
     done_date = models.DateField(null=True)
-    namefile = models.FileField(upload_to="names/")
+    namefile = models.FileField(upload_to="uploadcsv/static/")
     textlist = models.TextField(null=True,blank=True)
     donefile = models.TextField(null=True)
     status = models.TextField()
