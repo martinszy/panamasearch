@@ -1,3 +1,4 @@
+{% load static %}
 <html>
 <head>
 <title>Panama Search</title>
@@ -18,7 +19,7 @@
   {% for namelist in namelists %}
   {{namelist.namefile}} -
   {{namelist.status}} -
-  {{namelist.donefile}} <br>
+  <a href="{{namelist.donefile}}">{{namelist.donefile}}</a> <br>
   {% endfor %}
 {% endif %}
 
