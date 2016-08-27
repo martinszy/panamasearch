@@ -124,7 +124,7 @@
               <div id="contForm" class="contPage col-sm-12">
               <div class="row">
 
-                <form method="post" id="formulario" enctype="multipart/form-data">
+                <form method="post" id="formulario" enctype="multipart/form-data" action="/">
                     <div class="col-sm-12">
                         <h1>Subir Archivo CSV o copy/page en textarea en formato CSV:</h1>
                         {% csrf_token %}
@@ -169,7 +169,7 @@
                     </td>
                     <td>
                       {% if namelist.donefile %}
-                      <a href="{{namelist.donefile}}">{{namelist.donefile}}</a>
+                      <a href="{% static namelist.donefile %}">{{namelist.donefile}}</a>
                       {% endif %}
                       </td>
                     </tr>
