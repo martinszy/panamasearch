@@ -15,6 +15,22 @@ Cómo usuario de ejemplo / caso de uso, contaremos con algunos de los datasets d
 Necesitamos ayuda escribiendo el código que produce el índice, la UI para subir los CSV, el código que inserta los resultados a Neo4J, dockerizando todo para que un usuario pueda levantar todo el sistema con un sólo comando.
 
 #Instalación
+Instalar Docker: https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker
+
+###Desde Docker Hub
+
+No necesitan bajar el código, hay una imagen publica en Docker Hub y la pueden obtener así:
+
+`docker run -p 3000:3000 -d cubetto/panamasearch:v1`
+
+
+###Imagen Local
+
+`docker build -t panamasearch`
+`docker run -p 3000:3000 -d panamasearch`
+
+
+#Instalación sin docker
 `git clone https://github.com/martinszy/panamasearch.git`
 
 `cd panamasearch`
