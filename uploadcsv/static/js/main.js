@@ -67,3 +67,31 @@ function loadMain(){
 
 //------------------
 });
+
+
+
+
+
+//-------------------------function ver csv desde link--------------------------------------
+function verCSV(url_){         
+  Papa.parse(url_, {
+    download: true,
+    complete: function(results){ 
+        $("#resultadoCSV table").html('');  //para que no se acumulen vistas de CSV
+
+        for(var i=0;i<results.data.length;i++){ 
+
+               $("#resultadoCSV table").append(
+                    "<tr>"+
+                    "<td>"+results.data[i][0]+"</td>"+
+                    "<td>"+results.data[i][1]+"</td>"+
+                    "<td>"+results.data[i][2]+"</td>"+
+                    "<td>"+results.data[i][3]+"</td>"+
+                    "</tr>"
+                );
+        }                        
+      }        
+  });                 
+   
+}
+//-------------------------------------------------------------------
