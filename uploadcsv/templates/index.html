@@ -4,7 +4,7 @@
  <head>
  <meta charset="UTF-8">
   <script src="/static/js/jquery-2.2.3.min.js"></script>
-
+  <script src="static/js/papaparse.js"></script>
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/css/style.css">
 	<!--[if lt IE 9]>
@@ -148,6 +148,7 @@
 
               <div id="contResp" class="contPage col-sm-12">
                   <div id="titulo"><h1>Trabajos:</h1><a href="/#resultstable" onclick="window.location.reload()">Recargar</a></div>
+                  
                   <div id="resultado">
                     {% if resultado %}
                     {{ resultado }}
@@ -155,26 +156,50 @@
                   <table id="resultstable">
                     {% if namelists %}
                       {% for namelist in namelists %}
-                      <tr>
-                      <td>
-                          {{namelist.upload_date}}
-                      </td>
-                      <td>
-                      {{namelist.namefile}}
-                    </td>
-                    <td>
-                      {{namelist.status}}
-                    </td>
-                    <td>
-                      {% if namelist.donefile %}
-                      <a href="{% static namelist.donefile %}">{{namelist.donefile}}</a>
-                      {% endif %}
-                      </td>
+                    <tr>
+                        <td>
+                             {{namelist.upload_date}}
+                        </td>
+                        <td>
+                             {{namelist.namefile}}
+                        </td>
+                        <td>
+                             {{namelist.status}}
+                        </td>
+                        <td>
+                             {% if namelist.donefile %}
+
+                             <!--a href="{% static namelist.donefile %}">
+                                {{namelist.donefile}}
+                            </a-->
+
+                            
+                            <!--  bot con link csv como parametro  -->
+                            <div class="verCSV" onclick="verCSV('{{namelist.donefile}}')">
+                               ver-csv
+                            </div>
+                            <!-- .................................. -->
+
+
+
+                            {% endif %}
+                        </td>
                     </tr>
                       {% endfor %}
                     {% endif %}
-                  </ul>
+                  </table>
                   </div>
+                  
+
+                  <!-- resultados de link CSV-->
+                  <div id="resultadoCSV">
+                    <table>
+                      
+                    </table>
+                  </div>
+                  <!-- ..................... -->
+                  
+
               </div>
 
 
