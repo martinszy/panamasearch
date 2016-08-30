@@ -21,13 +21,13 @@ Instalar Docker: https://docs.docker.com/engine/getstarted/step_one/#step-1-get-
 
 No necesitan bajar el código, hay una imagen publica en Docker Hub y la pueden obtener así:
 
-`docker run -p 3000:3000 -d cubetto/panamasearch:v1`
+`docker run -p 5000:5000 -d cubetto/panamasearch`
 
 
 ###Imagen Local
 
 `docker build -t panamasearch`
-`docker run -p 3000:3000 -d panamasearch`
+`docker run -p 5000:5000 -d panamasearch`
 
 
 #Instalación sin docker
