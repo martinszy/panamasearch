@@ -131,7 +131,7 @@
                           {{ form }}
 
                         </table>
-                      <input type="submit" value="Cargar CSV">
+                      <!--input type="submit" value="Cargar CSV"-->
 
                     </div>
                 </form>
@@ -147,53 +147,57 @@
 
 
               <div id="contResp" class="contPage col-sm-12">
-                  <div id="titulo"><h1>Trabajos:</h1><a href="/#resultstable" onclick="window.location.reload()">Recargar</a></div>
+                  <div class="row">
+                    <div id="titulo" class="col-md-12">
+                      <h1>Trabajos:</h1>
+                      <a id="botRecarga" href="/#resultstable" onclick="window.location.reload()">Recargar</a>
+                    </div>
+                  </div>
                   
-                  <div id="resultado">
+
+
+                  <div id="resultado" class="col-md-12">
                     {% if resultado %}
                     {{ resultado }}
                     {% endif %}
-                  <table id="resultstable">
+                  <div class="row"> 
+                  <table id="resultstable" class="col-md-12">
                     {% if namelists %}
                       {% for namelist in namelists %}
-                    <tr>
-                        <td>
-                             {{namelist.upload_date}}
-                        </td>
-                        <td>
-                             {{namelist.namefile}}
-                        </td>
-                        <td>
-                             {{namelist.status}}
-                        </td>
-                        <td>
-                             {% if namelist.donefile %}
-
-                             <a href="{% static namelist.donefile %}">
-                                {{namelist.donefile}}
-                            </a>
-
+                        
+                        <tr>                            
+                            <td>{{namelist.upload_date}}</td> <!-- fecha -->
+                            <td>{{namelist.namefile}}</td> <!-- nombre -->
+                            <td>{{namelist.status}}</td> <!-- status-->
                             
-                            <!--  bot con link csv como parametro  -->
-                            <div class="verCSV" onclick="verCSV('{% static namelist.donefile %}')">
-                               ver-csv
-                            </div>
-                            <!-- .................................. -->
-
-
-
+                            <!-- link y ver CSV-->
+                            {% if namelist.donefile %}
+                              <td>
+                                  <a href="{% static namelist.donefile %}">
+                                        {{namelist.donefile}}
+                                  </a>
+                              </td>
+                              <td>
+                                  <div class="verCSV" onclick="verCSV('{% static namelist.donefile %}')">
+                                         ver-csv
+                                  </div> 
+                              </td>                        
                             {% endif %}
-                        </td>
-                    </tr>
+                            <!-- ... -->
+
+                        </tr>
+
                       {% endfor %}
                     {% endif %}
                   </table>
                   </div>
+                  </div>
                   
 
                   <!-- resultados de link CSV-->
-                  <div id="resultadoCSV">
-                    <table>
+                  <div id="titResultCSV" class="col-md-12"><h1>Resultados CSV:</h1></div>
+                  <div id="resultadoCSV" class="col-md-12">
+                    <table class="col-md-12">
                       
                     </table>
                   </div>

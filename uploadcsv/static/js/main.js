@@ -3,21 +3,18 @@
 var w1;
 var h1;
 
-
 $(document).ready(function() {
-
   loadMain();
-
 });
 
+//reload para 1 minuto
+//setInterval('location.reload()',60000);
 
 function loadMain(){
-
 
         var form = $('#formulario');
         $("input[name='file']").on("change", function(){ event.preventDefault();  form_code(); });
         //$(form).submit(function(event) { event.preventDefault(); form_code();  });
-
 
         //--------------------
         function form_code(){
@@ -52,24 +49,29 @@ function loadMain(){
                 }
             });
 
-
-        }
-        //--------Form Code------------
-
-
-
-
-}//-------------loadMain-----------------
+        }//--------Form Code------------
 
 
 
 
 
-//------------------
-});
+
+    }//-----------loadMain---------------
+
+});//----------function anonima--------
 
 
 
+
+
+
+function updateDiv(){
+    //get new content through ajax
+    ...
+    $('#div-id').html(newContent);
+}
+
+setInterval(updateDiv, 5000);
 
 
 //-------------------------function ver csv desde link--------------------------------------

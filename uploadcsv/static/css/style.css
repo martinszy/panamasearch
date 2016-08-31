@@ -132,7 +132,7 @@ body{
     background:#fff;
     border-radius:10px;
     margin-top:0px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 }
 
 #resultstable td {
@@ -264,11 +264,25 @@ body{
     text-align: center;
 }
 
+#resultCSV{
+    display: block;
+    float: none;
+    font-size: 20px;
+    color: #0ca7a3;
+    margin: 20px auto 40px auto;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px #e8e8e8 solid;
+}
+
 #contForm h1{
-  font-size:24px;
-  color: #333;
-  margin:20px 0;
-  font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-size: 24px;
+    color: #333;
+    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    float: none;
+    margin: 0 auto;
 }
 
 #contForm #fileCont{
@@ -308,11 +322,43 @@ body{
     bottom:45%;
 }
 
-#contResp #titulo{
+ #titulo{
+    width: 400px;
+    height: 50px;
     font-size: 25px;
     color: #333;
-    padding:20px 0;
+    padding: 0px 0;
     text-align: center;
+    float: none;
+    margin: 30px auto 20px auto;
+    position: relative;
+}
+
+#titulo #botRecarga{
+    background: #00a1ca;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 25px;
+    line-height: 25px;
+    height: 37px;
+    display: block;
+    margin: 10px;
+    float: left;
+    width: 150px;
+}
+
+#titulo h1{
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 25px;
+    line-height: 25px;
+    width: 150px;
+    height: 37px;
+    display: block;
+    margin: 10px; 
+    float: left;
 }
 
 #resultado ul{
@@ -333,4 +379,24 @@ body{
 
 #contResp{
         font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#resultadoCSV{
+    min-height: 300px;
+    background: #deefdc;
+    margin:10px 0px;
+    padding: 10px;
+}
+
+#titResultCSV h1{
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 25px;
+    line-height: 25px;
+    width: 230px;
+    height: 37px;
+    display: block;
+    margin:30px auto 0px auto; 
+    float: none;
 }
