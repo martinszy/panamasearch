@@ -172,14 +172,14 @@
                             
                             <!-- link y ver CSV-->
                             {% if namelist.donefile %}
-                              <td>
-                                  <a href="{% static namelist.donefile %}">
-                                        {{namelist.donefile}}
+                              <td width="100px">
+                                  <a href="{% static namelist.donefile %}" class="descargarCSV">
+                                      Descargar
                                   </a>
                               </td>
-                              <td>
+                              <td width="100px">
                                   <div class="verCSV" onclick="verCSV('{% static namelist.donefile %}')">
-                                         ver-csv
+                                         Ver-csv
                                   </div> 
                               </td>                        
                             {% endif %}

@@ -346,6 +346,7 @@ body{
     margin: 10px;
     float: left;
     width: 150px;
+    cursor: pointer;
 }
 
 #titulo h1{
@@ -399,4 +400,50 @@ body{
     display: block;
     margin:30px auto 0px auto; 
     float: none;
+}
+
+.verCSV{
+    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #0f9491;
+    color: #fff;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.verCSV:hover{
+text-decoration: underline;
+}
+
+.verCSV:visited{
+text-decoration: underline;
+}
+
+.descargarCSV{
+    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #94650f;
+    color: #fff;
+    font-size: 15px;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.descargarCSV:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+.descargarCSV:visited{
+    color: #fff;
 }
