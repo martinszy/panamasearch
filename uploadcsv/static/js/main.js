@@ -64,16 +64,6 @@ function loadMain(){
 
 
 
-
-function updateDiv(){
-    //get new content through ajax
-    ...
-    $('#div-id').html(newContent);
-}
-
-setInterval(updateDiv, 5000);
-
-
 //-------------------------function ver csv desde link--------------------------------------
 function verCSV(url_){         
   Papa.parse(url_, {
