@@ -12,18 +12,13 @@
 	<![endif]-->
 
 
-   <script>
-
-    </script>
-
-
 </head>
 <body>
 
   <div id="cont" class="container-fluid">
   <div class="row">
 
-      <nav class="col-md-12">
+      <nav class="col-md-12 col-sm-12">
         <ul id="nav1">
           <li><h1>Panama Search</h1></li>
         </ul>
@@ -32,14 +27,14 @@
         </a>
       </nav>
 
-      <header class="col-sm-10 col-sm-offset-1">
+      <header class="col-md-10 col-md-offset-1">
         <div class="row">
              <div class="line"></div>
 
         </div>
       </header>
 
-      <section class="col-sm-10 col-sm-offset-1">
+      <section class="col-md-10 col-md-offset-1">
       <div class="row">
 
 
@@ -50,7 +45,7 @@
 
 
 
-              <div id="titForm" class="contPage col-sm-12">
+              <div id="titForm" class="contPage col-md-12">
               <div class="row">
                   <div id="titInfo">
                     <h1>Panama Search</h1>
@@ -78,7 +73,7 @@
                         </div>
                   </div>
                   </div>
-                  <div id="infoForm" class="col-sm-12">
+                  <div id="infoForm" class="col-md-12">
 
                       Cada renglón equivale a un registro, pudiendo ingresar más de un dato por registro separado por comas. Por jemplo:
 
@@ -120,16 +115,15 @@
 
 
 
-              <div id="contForm" class="contPage col-sm-12">
+              <div id="contForm" class="contPage col-md-12">
               <div class="row">
 
                 <form method="post" id="formulario" enctype="multipart/form-data" action="/">
-                    <div class="col-sm-12">
+                    <div class="col-md-12">
                         <h1>Subir Archivo CSV:</h1>
                         {% csrf_token %}
                         <table>
                           {{ form }}
-
                         </table>
                       <!--input type="submit" value="Cargar CSV"-->
 
@@ -146,7 +140,7 @@
 
 
 
-              <div id="contResp" class="contPage col-sm-12">
+              <div id="contResp" class="contPage col-md-12">
                   <div class="row">
                     <div id="titulo" class="col-md-12">
                       <h1>Trabajos:</h1>
