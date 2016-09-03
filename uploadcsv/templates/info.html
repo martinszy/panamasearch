@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+ <head>
+ <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="/static/js/jquery-2.2.3.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/papaparse.js"></script>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://static.mlstatic.com/org-img/ch/tools/html5shiv/html5shiv.js"></script>
+	<![endif]-->
+
+
+</head>
+<body>
+
+  <div id="cont" class="container-fluid">
+  <div class="row">
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand titWeb" href="#"><h1>Panama Search</h1></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upload.html">Buscador</a></li>
+        <li class="active"><a href="#">+info</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a id="logo_hack" href="https://hackdash.org/projects/57c19017d9284f016c047248" target="_blank"><img src="{% static 'img/logohack.png' %}" alt=""></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="line"></div>
+</nav>
+
+
+
+<!-- .......................................... -->
+
+
+
+<section class="col-md-10 col-md-offset-1 col-sm-12">
+<div class="row">
+
+
+
+              <div id="titForm" class="contPage col-md-12">
+              <div class="row">
+                  <div id="titInfo">
+                    <h1>Proyecto GitHub:</h1>
+                    <br>
+                    <h2><a href="https://github.com/martinszy/panamasearch" alt="gitHub" target="_blank">
+                   		 https://github.com/martinszy/panamasearch
+                    </a></h2>
+                  </div>
+              </div>
+              </div>
+
+
+
+</div>
+</section>
+
+
+
+  </div>
+  </div>
+</body>
+</html>
