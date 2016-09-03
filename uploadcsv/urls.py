@@ -6,4 +6,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^cola/$', views.cola, name='cola'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

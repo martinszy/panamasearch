@@ -132,7 +132,7 @@ body{
     background:#fff;
     border-radius:10px;
     margin-top:0px;
-    margin-bottom: 100px;
+    margin-bottom: 4em;
 }
 
 #resultstable td {
@@ -140,12 +140,10 @@ body{
   font-family: sans-serif;
 }
 
-#cont nav{
+#cont header{
     height:60px;
     background:#00a1ca;
-}
-
-#cont header{
+    margin-bottom: 2em;
 }
 
 #cont header .line{
@@ -153,6 +151,7 @@ body{
     height:2px;
     background: #f00;
     float: left;
+    clear: both;
     margin:0;
     padding:0;
 }
@@ -189,11 +188,10 @@ body{
 
 
 
+#logo_github,
 #logo_hack{
     width:50px;
-    position:absolute;
-    top:0;
-    right:0;
+    float: right;
     margin-right:10px;
 }
 
@@ -214,9 +212,10 @@ body{
     padding:20px 0px 0px 0px;
     font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-#titForm #titInfo h2{
-    font-size:28px;
-    padding:5px 0px;
+ h2{
+    font-size:24px;
+    line-height: 54px;
+    padding:5px;
     font-weight:bold;
     font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -325,7 +324,7 @@ body{
 
 
 #imgManos{
-    width:500px;
+    width:250px;
     float: none;
     margin:0 auto;
     display: block;

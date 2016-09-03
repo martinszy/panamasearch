@@ -19,6 +19,20 @@ function loadMain(){
         //$(form).submit(function(event) { event.preventDefault(); form_code();  });
 
 
+        //Reload results list periodically
+        (function worker() {
+          $.ajax({
+            url: '/cola/',
+            success: function(data) {
+              $('#resultado').html(data);
+            },
+            complete: function() {
+              // Schedule the next request when the current one's complete
+              setTimeout(worker, 5000);
+            }
+          });
+        })();
+
         //--------------------
         function form_code(){
 
@@ -73,13 +87,13 @@ function loadMain(){
 
 
 //-------------------------function ver csv desde link--------------------------------------
-function verCSV(url_){         
+function verCSV(url_){
   Papa.parse(url_, {
     download: true,
-    complete: function(results){ 
+    complete: function(results){
         $("#resultadoCSV table").html('');  //para que no se acumulen vistas de CSV
 
-        for(var i=0;i<results.data.length;i++){ 
+        for(var i=0;i<results.data.length;i++){
 
                $("#resultadoCSV table").append(
                     "<tr>"+
@@ -89,9 +103,9 @@ function verCSV(url_){
                     "<td>"+results.data[i][3]+"</td>"+
                     "</tr>"
                 );
-        }                        
-      }        
-  });                 
-   
+        }
+      }
+  });
+
 }
 //-------------------------------------------------------------------

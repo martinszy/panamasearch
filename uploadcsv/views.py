@@ -15,9 +15,14 @@ def index(request):
             instance = Namelist(namefile=request.FILES['namefile'])
             instance.status = "Pending"
             instance.save()
-            return render(request, 'index.html', {'namelists': namelists, 'form': form, 'resultado': "Subido"})
+            return render(request, 'index.html', {'form': form, 'resultado': "El archivo ha sido subido corectamente."})
         else:
-            return render(request, 'index.html', {'namelists': namelists, 'form': form,'resultado': "Error"})
+            return render(request, 'index.html', {'form': form,'resultado': "Ha ocurido un error, el archivo no pudo ser subido."})
     else:
         form = UploadFileForm()
-    return render(request, 'index.html', {'namelists': namelists, 'form': form})
+    return render(request, 'index.html', {'form': form})
+
+def cola(request):
+    model = Namelist;
+    namelists = Namelist.objects.all();
+    return render(request, 'cola.html', {'namelists': namelists})

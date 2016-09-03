@@ -5,8 +5,8 @@ from django import forms
 
 # Create your models here.
 class Namelist(models.Model):
-    upload_date = models.DateField(auto_now=True)
-    done_date = models.DateField(null=True)
+    upload_date = models.DateTimeField(auto_now=True)
+    done_date = models.DateTimeField(null=True)
     namefile = models.FileField(upload_to="uploadcsv/static/")
     donefile = models.TextField(null=True)
     status = models.TextField()
