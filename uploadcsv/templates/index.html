@@ -3,10 +3,15 @@
 <html>
  <head>
  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <script src="/static/js/jquery-2.2.3.min.js"></script>
-  <script src="static/js/papaparse.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/papaparse.js"></script>
+
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+
 	<!--[if lt IE 9]>
 		<script src="http://static.mlstatic.com/org-img/ch/tools/html5shiv/html5shiv.js"></script>
 	<![endif]-->
@@ -18,31 +23,41 @@
   <div id="cont" class="container-fluid">
   <div class="row">
 
-      <nav class="col-md-12 col-sm-12">
-        <ul id="nav1">
-          <li><h1>Panama Search</h1></li>
-        </ul>
-        <a href="https://hackdash.org/projects/57c19017d9284f016c047248" target="_blank">
-          <img src="{% static 'img/logohack.png' %}" alt="" id="logo_hack">
-        </a>
-      </nav>
-
-      <header class="col-md-10 col-md-offset-1">
-        <div class="row">
-             <div class="line"></div>
-
-        </div>
-      </header>
-
-      <section class="col-md-10 col-md-offset-1">
-      <div class="row">
 
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand titWeb" href="#"><h1>Panama Search</h1></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="upload.html">Buscador</a></li>
+        <li><a href="#">+info</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a id="logo_hack" href="https://hackdash.org/projects/57c19017d9284f016c047248" target="_blank"><img src="{% static 'img/logohack.png' %}" alt=""></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="line"></div>
+</nav>
+
+
+
+<section class="col-md-10 col-md-offset-1 col-sm-12">
+<div class="row">
 
 
               <!-- ............................................ -->
-
-
 
 
               <div id="titForm" class="contPage col-md-12">
@@ -70,6 +85,7 @@
                                     <img class="imgCsv" src="{% static 'img/imgcsv1.png'%}" alt="" width="250px" height="250px">
                         </div>
                         <div class="col-md-6">
+                                    
                         </div>
                   </div>
                   </div>
@@ -109,99 +125,6 @@
               </div>
 
 
-
-
-              <!-- ............................................ -->
-
-
-
-              <div id="contForm" class="contPage col-md-12">
-              <div class="row">
-
-                <form method="post" id="formulario" enctype="multipart/form-data" action="/">
-                    <div class="col-md-12">
-                        <h1>Subir Archivo CSV:</h1>
-                        {% csrf_token %}
-                        <table>
-                          {{ form }}
-                        </table>
-                      <!--input type="submit" value="Cargar CSV"-->
-
-                    </div>
-                </form>
-
-              </div>
-              </div>
-
-
-
-              <!-- ............................................ -->
-
-
-
-
-              <div id="contResp" class="contPage col-md-12">
-                  <div class="row">
-                    <div id="titulo" class="col-md-12">
-                      <h1>Trabajos:</h1>
-                      <a id="botRecarga" href="/#resultstable" onclick="window.location.reload()">Recargar</a>
-                    </div>
-                  </div>
-                  
-
-
-                  <div id="resultado" class="col-md-12">
-                    {% if resultado %}
-                    {{ resultado }}
-                    {% endif %}
-                  <div class="row"> 
-                  <table id="resultstable" class="col-md-12">
-                    {% if namelists %}
-                      {% for namelist in namelists %}
-                        
-                        <tr>                            
-                            <td>{{namelist.upload_date}}</td> <!-- fecha -->
-                            <td>{{namelist.namefile}}</td> <!-- nombre -->
-                            <td>{{namelist.status}}</td> <!-- status-->
-                            
-                            <!-- link y ver CSV-->
-                            {% if namelist.donefile %}
-                              <td width="100px">
-                                  <a href="{% static namelist.donefile %}" class="descargarCSV">
-                                      Descargar
-                                  </a>
-                              </td>
-                              <td width="100px">
-                                  <div class="verCSV" onclick="verCSV('{% static namelist.donefile %}')">
-                                         Ver-csv
-                                  </div> 
-                              </td>                        
-                            {% endif %}
-                            <!-- ... -->
-
-                        </tr>
-
-                      {% endfor %}
-                    {% endif %}
-                  </table>
-                  </div>
-                  </div>
-                  
-
-                  <!-- resultados de link CSV-->
-                  <div id="titResultCSV" class="col-md-12"><h1>Resultados CSV:</h1></div>
-                  <div id="resultadoCSV" class="col-md-12">
-                    <table class="col-md-12">
-                      
-                    </table>
-                  </div>
-                  <!-- ..................... -->
-
-
-              </div>
-
-
-
               <!-- ............................................ -->
 
       </div>
@@ -210,6 +133,6 @@
 
   </div>
   </div>
-  <script type="text/javascript"  src="/static/js/main.js"></script>
+
 </body>
 </html>

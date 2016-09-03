@@ -111,10 +111,7 @@ input, select {
 
 
 
-
-
-
-
+/*--------------------------------*/
 
 
 
@@ -125,30 +122,61 @@ body{
 
 
 #cont{
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .contPage{
     background:#fff;
-    border-radius:10px;
-    margin-top:0px;
-    margin-bottom: 0px;
 }
 
-#resultstable td {
-  padding: 8px;
-  font-family: sans-serif;
+
+
+/*------------NAV--------------------*/
+
+
+.navbar{
+    background:#00a1ca;  
+    border-radius:0px!important;
+    border: none!important;
 }
 
-#cont nav{
-    height:60px;
-    background:#00a1ca;
+.nav li a{
+    color:#333!important;
+    text-decoration:none;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #00a1ca!important;
+    color: #fff!important;
 }
 
-#cont header{
+.navbar-inverse .navbar-brand{
+    color: #fff!important;
 }
 
-#cont header .line{
+.titWeb{
+    font-size:26px;
+    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.titWeb h1{
+    line-height:20px;
+}
+
+#logo_hack{
+    width: 40px;
+    float: none;
+    margin: 0 auto;
+}
+
+#logo_hack img{
+    width: 40px;
+    margin-top: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+}
+
+.line{
     width:100%;
     height:2px;
     background: #f00;
@@ -156,108 +184,18 @@ body{
     padding:0;
 }
 
-#cont section{
-    min-height:400px;
-    margin-top:0px;
-}
-
-
-#cont nav ul#nav1{
-    margin:0;
-    padding:0;
-}
-
-#nav1 li{
-    float: left;
-    margin:0;
-    padding:0;
-    list-style:none;
-    position:relative;
-}
-
-#nav1 li h1{
-    font-size:40px;
-    color:#fff;
-    line-height:60px;
-    margin-left:10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+.navbar-collapse.in {
+    height: 200px;
 }
 
 
 
-
-#logo_hack{
-    width:50px;
-    position:absolute;
-    top:0;
-    right:0;
-    margin-right:10px;
-}
-
-#titForm{
-
-}
+/*--------------------------------*/
 
 
 
-#titForm #titInfo{
-    text-align:center;
-    color: #333;
-    padding:20px 0px;
-}
-
-#titForm #titInfo h1{
-    font-size:40px;
-    padding:20px 0px 0px 0px;
-    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-#titForm #titInfo h2{
-    font-size:28px;
-    padding:5px 0px;
-    font-weight:bold;
-    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-#titInfo2{
-      margin:20px 0;
-}
-
-.titInfo3{
-      margin:20px 0;
-}
-.titInfo3 h1{
-      margin:10px 0;
-      font-size:20px;
-      font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.imgCsv{float: none; margin:0 auto; display:block;}
 
 
-#titInfo2 h1{
-     font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-#titInfo2 #imgHack{
-      margin:0px 50px 20px 50px;
-}
-
-#titForm #infoForm{
-    text-align:left;
-    padding:20px 0;
-    line-height:20px;
-    letter-spacing: 1px;
-}
-
-#titForm #infoForm2{
-    text-align:left;
-    background:#ddd;
-    min-height:50px;
-    margin-top:10px;
-    padding:20px;
-}
 
 #contForm{
     text-align: center;
@@ -312,6 +250,11 @@ body{
     border:1px #ccc solid;
     overflow: auto;
 }
+
+
+
+/*----------------------------------------*/
+
 
 #loading_cont{
     width:20px;
@@ -456,3 +399,82 @@ text-decoration: underline;
 .descargarCSV:visited{
     color: #fff;
 }
+
+#resultstable td {
+  padding: 8px;
+  font-family: sans-serif;
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------*/
+
+
+
+
+
+
+
+#titForm #titInfo{
+    text-align:center;
+    color: #333;
+    padding:20px 0px;
+}
+
+#titForm #titInfo h1{
+    font-size:40px;
+    padding:20px 0px 0px 0px;
+    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#titForm #titInfo h2{
+    font-size:28px;
+    padding:5px 0px;
+    font-weight:bold;
+    font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#titInfo2{
+      margin:20px 0;
+}
+
+.titInfo3{
+      margin:20px 0;
+}
+.titInfo3 h1{
+      margin:10px 0;
+      font-size:20px;
+      font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.imgCsv{float: none; margin:0 auto; display:block;}
+
+
+#titInfo2 h1{
+     font-family: fontfam, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+#titInfo2 #imgHack{
+      margin:0 auto;
+      float: none;
+      display: block;
+}
+
+#titForm #infoForm{
+    text-align:left;
+    padding:20px 0;
+    line-height:20px;
+    letter-spacing: 1px;
+}
+
+#titForm #infoForm2{
+    text-align:left;
+    background:#ddd;
+    min-height:50px;
+    margin-top:10px;
+    padding:20px;
+}
+
