@@ -6,7 +6,7 @@ from set_implementation import get_shingles, jaccard
 
 
 THRESHOLD = 0.6
-PANAMA_FILE = "data/Officers.csv"
+PANAMA_FILE = "data/leaktosearch.csv"
 
 
 def find_doc(name, docs):

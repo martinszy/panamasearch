@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'panamasearch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db/db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'data/db.sqlite3'),
     }
 }
 
@@ -121,3 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, "../data/jobs/"),
+]
