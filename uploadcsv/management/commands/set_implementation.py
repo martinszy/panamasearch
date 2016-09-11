@@ -9,7 +9,7 @@ def jaccard(set1, set2):
         set1 and set2 are the set of shingles of the strings to compare
     """
     x = len(set1.intersection(set2))
-    y = len(set1.union(set2))
+    y = len(set1) + len(set2) - x
     res = x / float(y)
     return res
 
