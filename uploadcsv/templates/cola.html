@@ -2,7 +2,7 @@
 
 <table id="resultstable">
   {% if namelists %}
-    {% for namelist in namelists %}
+    {% for namelist in namelists|dictsortreversed:"upload_date" %}
   <tr>
       <td>
            {{namelist.upload_date}}
