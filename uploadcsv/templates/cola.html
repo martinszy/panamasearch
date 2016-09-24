@@ -8,8 +8,8 @@
            {{namelist.upload_date}}
       </td>
       <td>
-        <a href="/{{ namelist.namefile }}">
-          {{namelist.namefile}}
+        <a href="{% static namelist.namefile|cut:"data/jobs" %}">
+          {{namelist.namefile|cut:"data/jobs"}}
        </a>
       </td>
       <td>
