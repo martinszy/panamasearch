@@ -1,3 +1,5 @@
+
+
 """
 Django settings for panamasearch project.
 
@@ -25,7 +27,7 @@ SECRET_KEY = '=yqaj^g+&vr3lfyf8n)1gg#j6*26cie_br*y%06ei!1#1sq-h&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["leaksearch.fcabierto.org"]
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'uploadcsv'
 ]
 
